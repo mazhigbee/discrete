@@ -1,6 +1,6 @@
-//GENERATES N AMOUNT OF PRIMES
-//Discrete
-//Mazlin Higbee
+//GENRATES ALL PRIMES FROM 2 TO N
+//MAZLIN HIGBEE
+//DISCRETE
 #include <iostream>
 #include <math.h>
 
@@ -11,28 +11,25 @@ bool primeChecker(int num);
 int main()
 {
 	int num;
-	int temp = 2;
+	int temp = 0;
 	char keep_going = 'y';
 	bool prime;
-	int primeCounter = 0;
 	while (keep_going == 'y')
 	{
-		cout << "How many primes would you like to generate?: ";
+		cout << "To what number would you like to generate primes?: ";
 		cin >> num; 
-		
-		while(primeCounter < num){
-			prime = primeChecker(temp);
+		for(int i = 2; i < num; i++){
+			prime = primeChecker(i);
 			if(prime == true){
-				cout << temp << endl;
-				primeCounter++;
+				cout << i << endl;
+				temp++;
 			}
-			temp++;
 		}
-		cout << num << " primes printed\n";
+		cout << "All primes between 0 and " << num << " printed\n";
+		cout << "There are " << temp << " primes\n";
 		cout << "Would you like to check another number? (y/n): ";
 		cin >> keep_going;
 		temp = 0;
-		primeCounter = 0;
 	}
 
 

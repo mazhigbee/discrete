@@ -29,7 +29,7 @@ int main()
 		}
 		//check for odd factors
 		if (prime != false && num != 2) {
-			for (int i = 3; i < sqrt(num); i = i + 2)
+			for (int i = 3; i <= sqrt(num); i = i + 2)
 			{
 				counter++;
 				if (num % i == 0)
