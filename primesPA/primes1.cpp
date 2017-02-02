@@ -31,7 +31,7 @@ int main()
 		cout << num << " primes printed\n";
 		cout << "Would you like to check another number? (y/n): ";
 		cin >> keep_going;
-		temp = 0;
+		temp = 2;
 		primeCounter = 0;
 	}
 
