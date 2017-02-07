@@ -1,4 +1,4 @@
-//
+//factorial2.cpp allows checking of permutations starting at n for r amount of times
 //Discrete
 //Mazlin Higbee
 #include <iostream>
@@ -34,7 +34,10 @@ int main()
 
 
 
-
+/**
+*finds n! of a num
+*@param num
+*/
 int findFactorial(int num)
 {
 
@@ -44,7 +47,11 @@ int findFactorial(int num)
 		return 1;
 
 }
-
+/**
+*finds P(n,r) permutations starting at N and going r times
+*@param n
+*@param r
+*/
 int permutation(int n, int r)
 {
 	

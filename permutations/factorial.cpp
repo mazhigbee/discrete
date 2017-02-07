@@ -1,4 +1,4 @@
-//
+//find the factorial or N! of a num
 //Discrete
 //Mazlin Higbee
 #include <iostream>
@@ -29,7 +29,10 @@ int main()
 
 
 
-
+/**
+*finds n! of a num
+*@param num
+*/
 int findFactorial(int num)
 {
 
