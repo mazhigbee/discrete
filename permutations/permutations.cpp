@@ -1,3 +1,8 @@
+//Mazlin Higbee
+//Permutations
+//Program #2
+//Partners: Lauren Kayla Dan
+
 #include <iostream>
 #include <math.h>
 
@@ -6,7 +11,7 @@ using namespace std;
 
 int factorial(int n);
 int permutation(int n, int r);
-void sets(int n, int array[],char charArray[]);
+void sets(int n, int array[], char charArray[]);
 void decToBin(int n, int array[]);
 
 int main()
@@ -15,7 +20,7 @@ int main()
 	for (int i = 0; i < 10; i++) {
 		array[i] = 0;
 	}
-	char charArray[] = {'A','B','C','D','E','F','G','H','I','J'};
+	char charArray[] = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J'};
 	int choice, n, r;
 
 	do
@@ -47,13 +52,16 @@ int main()
 		{
 			cout << "Enter n (1-10) to compute all subsets of the set of the first n letters: ";
 			cin >> n;
-			sets(n, array,charArray);
+			sets(n, array, charArray);
 		}
 	} while (choice != 4);
 
 	return 0;
 }
-
+/**
+*@param n
+*returns the factorial of N taken from the user
+*/
 int factorial(int n)
 {
 	if (n > 1)
@@ -61,56 +69,61 @@ int factorial(int n)
 	else
 		return 1;
 }
-
+/**
+*@param n
+*@param r
+*per-mutates a given number r times starting at n from the user
+*
+**/
 int permutation(int n, int r)
 {
 	if (r > 0)
 		return n * permutation(n - 1, r - 1);
 	else
 		return 1;
-
 }
 
-void sets(int n, int array[],char charArray[])
-{
-	
-	for(int i = 0; i <pow(2,n); i++){
-		decToBin(i,array);
+/**
+*
+*@param n
+*@param array[]
+*@param charArray[]
+*calls dec to bin 2^N times to generate a new array of "Binary values" each time
+*each generated array is checked against charArray[j]
+*any members in array[] that are one print the corresponding char in chararray[]
+*/
 
-		for(int j = 0; j < 10; j ++){
-			//binary array 
-			if(array[j] == 1){
+void sets(int n, int array[], char charArray[])
+{
+	cout << "{empty set}";
+
+	for (int i = 0; i < pow(2, n); i++) {
+		decToBin(i, array);
+
+		for (int j = 0; j < 10; j ++) {
+			//binary array
+			if (array[j] == 1) {
 				cout << charArray[j];
 			}
 		}
-		cout << endl;
-	}
-
 	
-cout << endl;
+	}
+	cout << endl;
 }
 
-
+/*
+*@param n
+*@param array
+*creates an array that stores a "binary" number
+*each slot is a representation of a power of 2  1-2-4-8-16-32-64-128-512
+*/
 void decToBin(int n, int array[])
 {
-	for (int i = 0; i < 10; i++) 
+	for (int i = 0; i < 10; i++)
 	{
 		array[i] = pow(2, i);
 		//cout << array[i] << endl;
-
-
 	}
-
-
-
-//TODO: make the following a function   THE INPUT NUMBER STANDS FOR THE NUMBER OF OPTIONS N ^ 2
-	//everytime you need to print abc...etc call the function for every number n-n^2
-	//print each time
-	//increment
-	//until you have correct amount of options
-	//
-
-
 
 	for (int j = 9; j >= 0; j--)
 	{
@@ -130,11 +143,10 @@ void decToBin(int n, int array[])
 		}
 
 	}
-	//cout << endl;
 	//prints binary array
-	for(int i = 0; i < 10; i++){
-		cout << array[i];
-	}
+	// for (int i = 0; i < 10; i++) {
+	// 	cout << array[i];
+	// }
 	cout << endl;
 }
 
